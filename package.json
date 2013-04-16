@@ -1,0 +1,55 @@
+{
+  "name": "landmark",
+  "version": "0.0.1",
+  "description": "Deploying all the parts of your application to the right places in your server fleet has never been easier.",
+  "bin" : {
+    "landmark" : "./landmark.js"
+  },
+  "main": "landmark.js",
+  "scripts": {
+    "test": "node ./test/landmark.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zngine/landmark.git"
+  },
+  "keywords": [
+    "server",
+    "deploy",
+    "fleet",
+    "admin"
+  ],  
+  "author": "Zngine <developer@zngine.com>",
+  "contributors": [
+    {
+      "name": "Joe Mills",
+      "email": "mills.joe@gmail.com",
+      "url": "https://github.com/blargism"
+    },
+    {
+      "name": "Pierce Moore",
+      "email": "pierce@piercemoore.com",
+      "url": "https://github.com/piercemoore"
+    }
+  ],
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/zngine/landmark/issues"
+  },
+  "dependencies": {
+    "jake": "*",
+    "async": "*",
+    "backbone": "*",
+    "underscore": "*",
+    "should": "*",
+    "supercli": "*",
+    "progress": "*",
+    "optimist": "*",
+    "handlebars": "*",
+    "uglify-js": "*",
+    "mocha": "*",
+    "winston": "*",
+    "socket.io": "*"
+  }
+}
