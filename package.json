@@ -1,9 +1,9 @@
 {
   "name": "landmark",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Deploying all the parts of your application to the right places in your server fleet has never been easier.",
-  "bin" : {
-    "landmark" : "./landmark.js"
+  "bin": {
+    "landmark": "./landmark.js"
   },
   "main": "landmark.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "deploy",
     "fleet",
     "admin"
-  ],  
+  ],
   "author": "Zngine <developer@zngine.com>",
   "contributors": [
     {
