@@ -50,6 +50,7 @@
     "uglify-js": "*",
     "mocha": "*",
     "winston": "*",
-    "socket.io": "*"
+    "socket.io": "*",
+    "socket.io-client" : "*"
   }
 }

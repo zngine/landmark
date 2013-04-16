@@ -1,17 +1,22 @@
 config = {
   "env" : {
     "master" : false,
-    "type" : {
+    /*
       "mongo" : false,
       "ds" : false,
       "web" : false,
       "api" : false,
       "oms" : false,
       "redis" : false,
-      "lb" : false
+      "lb" : false      
+     */
+    "type" : "web",
+    "ports" : {
+      "speak" : 1337,
+      "listen" : 1338
     },
-    "port" : 1337,
-    "hostname" : "Pierce_MBP.local"
+    "hostname" : "Pierce_MBP.local",
+    "name" : "web1"
   },
   "build" : {
     "js" : {
@@ -28,6 +33,7 @@ config = {
     //
   },
   "servers" : {
+    "master" : "http://127.0.0.1:1338",
     "mongo" : [
       "123.45.67.89:1337",
       "234.56.78.90:1337",

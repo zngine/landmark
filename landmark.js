@@ -5,8 +5,13 @@
  * @copyright 2013 Zngine
  * @license MIT
  */
-var io = require('socket.io')
-  , fs = require('fs')
+
+/**
+ * First we read in our config files and set them global
+ */
+GLOBAL._landmark = require('./config.js')
+
+var fs = require('fs')
   , path = require('path')
   , os = require('os')
   , EventEmitter = require('events').EventEmitter
@@ -28,6 +33,17 @@ var io = require('socket.io')
     .describe('h', 'Show this usage information')
     .default('h', false)
     .boolean('h')
+
+    .alias('m', 'master')
+    .describe('m', 'Enable this server to run in master mode')
+    .default('m', false)
+    .boolean('m')
+
+    .alias('s', 'slave')
+    .describe('s', 'Enable this server to run in slave mode')
+    .default('s', true)
+    .boolean('s')
+
     .argv
   
 
@@ -38,16 +54,21 @@ var io = require('socket.io')
   ;
 
 /**
- * First we read in our config files and set them global
- */
-GLOBAL._mudsmith = {
-  servers : require('./config/servers.js'),
-  commands : require('./config/commands.js'),
-  config : require('./config/config.js')
-}
-
-/**
  * Now we parse our command line options
  */
 if(argv.help)
   optimist.showHelp()
+
+scli("Preparing the Landmark to be seen from afar...")
+
+
+
+if( argv.master ) {
+  var MASTER = require('./landmark.master.js')
+  MASTER.init()
+}
+
+if( argv.slave ) {
+  var SLAVE = require('./landmark.slave.js')
+  SLAVE.init()
+}
